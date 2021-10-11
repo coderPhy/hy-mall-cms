@@ -5,14 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  ref,
-  onMounted,
-  defineProps,
-  withDefaults,
-  defineExpose,
-  watchEffect
-} from "vue"
+import { ref, onMounted, defineProps, withDefaults, watchEffect } from "vue"
 import { EChartsOption } from "echarts"
 
 import useEchart from "../hooks/useEchart"
@@ -39,7 +32,7 @@ const props = withDefaults(
 const echartDivRef = ref<HTMLElement>()
 
 onMounted(() => {
-  const { echartInstance, setOptions } = useEchart(echartDivRef.value!)
+  const { setOptions } = useEchart(echartDivRef.value!)
   setOptions(props.options)
 
   watchEffect(() => {

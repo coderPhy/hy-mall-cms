@@ -75,7 +75,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       // 路由跳转
       router.push("/main")
     },
-    phoneLoginAction({ commit }, payload: any) {
+    phoneLoginAction() {
       console.log("phoneLoginAction")
     },
     loadLocalLogin({ commit, dispatch }) {

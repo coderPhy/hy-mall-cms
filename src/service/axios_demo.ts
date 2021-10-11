@@ -48,7 +48,7 @@ axios
     }
   })
   .then((res) => {
-    // console.log(res)
+    console.log(res)
   })
 
 axios
@@ -59,7 +59,7 @@ axios
     }
   })
   .then((res) => {
-    // console.log(res)
+    console.log(res)
   })
 
 axios
@@ -68,7 +68,7 @@ axios
     axios.post("/post", { data: { name: "why", age: 22 } })
   ])
   .then((res) => {
-    // console.log(res)
+    console.log(res)
   })
 
 axios.interceptors.request.use(

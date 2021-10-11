@@ -27,7 +27,7 @@ const store = createStore<IRootState>({
     }
   },
   actions: {
-    async getInitialDataAction({ commit, state }) {
+    async getInitialDataAction({ commit }) {
       // 1.发送网络请求
       const departmentResult = await getPageListData("/department/list", {
         offset: 0,
