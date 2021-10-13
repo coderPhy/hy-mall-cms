@@ -34,6 +34,7 @@ const store = createStore<IRootState>({
         size: 1000
       })
       const { list: departmentList } = departmentResult.data
+
       const roleResult = await getPageListData("/role/list", {
         offset: 0,
         size: 1000
@@ -41,8 +42,8 @@ const store = createStore<IRootState>({
       const { list: roleList } = roleResult.data
 
       const menuResult = await getPageListData("/menu/list", {})
-
       const { list: menuList } = menuResult.data
+
       // 2.保存数据
       commit("changeEntireDepartment", departmentList)
       commit("changeEntirRole", roleList)

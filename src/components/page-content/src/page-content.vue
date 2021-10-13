@@ -121,9 +121,10 @@ export default defineComponent({
     getPageData({})
 
     // 3.从vuex中获取数据
-    const dataList = computed(() =>
-      store.getters["system/pageListData"](props.pageName)
-    )
+    const dataList = computed(() => {
+      return store.getters["system/pageListData"](props.pageName)
+    })
+
     const dataCount = computed(() =>
       store.getters["system/pageListCount"](props.pageName)
     )

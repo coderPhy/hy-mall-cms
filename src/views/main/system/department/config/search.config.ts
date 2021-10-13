@@ -5,20 +5,14 @@ export const searchFormConfig: IForm = {
     {
       field: "name",
       type: "input",
-      label: "名称",
-      placeholder: "请输入商品名称"
+      label: "部门名称",
+      placeholder: "请输入部门名称"
     },
     {
-      field: "address",
+      field: "leader",
       type: "input",
-      label: "商家地址",
-      placeholder: "请输入商家地址"
-    },
-    {
-      field: "status",
-      type: "input",
-      label: "状态",
-      placeholder: "请输入状态"
+      label: "领导",
+      placeholder: "请输入部门领导"
     },
     {
       field: "createAt",
@@ -26,9 +20,9 @@ export const searchFormConfig: IForm = {
       label: "创建时间",
       placeholder: "请选择创建时间范围",
       otherOptions: {
-        type: "daterange",
         startPlaceholder: "开始时间",
-        endPlaceholder: "结束时间"
+        endPlaceholder: "结束时间",
+        type: "daterange"
       }
     }
   ],

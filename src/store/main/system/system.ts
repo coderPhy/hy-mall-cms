@@ -20,7 +20,11 @@ const systemModule: Module<ISystemState, IRootState> = {
       goodsList: [],
       goodsCount: 0,
       menuList: [],
-      menuCount: 0
+      menuCount: 0,
+      departmentList: [],
+      departmentCount: 0,
+      storyList: [],
+      storyCount: 0
     }
   },
   getters: {
@@ -61,13 +65,25 @@ const systemModule: Module<ISystemState, IRootState> = {
     },
     changeMenuCount(state, count: number) {
       state.menuCount = count
+    },
+    changeDepartmentList(state, list: any[]) {
+      state.departmentList = list
+    },
+    changeDepartmentCount(state, count: number) {
+      state.departmentCount = count
+    },
+    changeStoreList(state, list: any[]) {
+      state.storyList = list
+    },
+    changeStoreCount(state, count: number) {
+      state.storyCount = count
     }
   },
   actions: {
     async getPageListAction({ commit }, payload: any) {
       const pageName: string = payload.pageName
       const pageUrl = `${pageName}/List`
-      // console.log(pageUrl)
+      console.log(pageUrl)
 
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
 
@@ -81,7 +97,6 @@ const systemModule: Module<ISystemState, IRootState> = {
     async deletePageDataAction(context, payload: any) {
       const { pageName, id } = payload
       const pageUrl = `/${pageName}/${id}`
-      console.log(pageUrl)
       await deletePageData(pageUrl)
 
       // 重新请求最新的数据
@@ -108,7 +123,7 @@ const systemModule: Module<ISystemState, IRootState> = {
         }
       })
     },
-    async editPageDataAction({ dispatch }, payload) {
+    async editPageDataAction({ dispatch }, payload: any) {
       const { pageName, editData, id } = payload
       const pageUrl = `/${pageName}/${id}`
       await editPageData(pageUrl, editData)
