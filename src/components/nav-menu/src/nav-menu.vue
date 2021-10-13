@@ -2,7 +2,7 @@
   <div class="nav-menu">
     <div class="logo">
       <img src="~@/assets/img/logo.svg" alt="logo" />
-      <span v-if="!collapse" class="title">Vue3+ts</span>
+      <span v-if="!collapse" class="title">phy-mall-cms</span>
     </div>
     <el-menu
       class="el-menu-vertical"
